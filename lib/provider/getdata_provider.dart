@@ -9,9 +9,7 @@ import 'package:http/http.dart' as http;
 
 class GetDataProvider with ChangeNotifier {
   ResponseData responseData = ResponseData();
-  var item = [];
-  List<ResponseData> resData = [];
-  // ResponseData? resData;
+  
   bool isLoading = false;
 
   getMyData() async {
@@ -26,11 +24,9 @@ class GetDataProvider with ChangeNotifier {
     try {
       final response = await http
           .get(Uri.parse("https://reqres.in/api/users?page=2"));
-      print(response.statusCode);
       if (response.statusCode == 200) {
         final item = json.decode(response.body);
         responseData = ResponseData.fromJson(item);
-        print(responseData.data![0].firstName);
         notifyListeners();
       } else {
         print("else");
