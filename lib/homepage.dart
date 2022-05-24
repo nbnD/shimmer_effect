@@ -46,21 +46,29 @@ class _HomePageState extends State<HomePage> {
               shrinkWrap: true,
               itemCount:  dataProvider.responseData.data!.length,
               itemBuilder: (ctx, i) {
-                return Card(
-                    
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Card(
+                      
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Image.network(dataProvider.responseData.data![i].avatar!,height:150,width: 100,),
-                          Column(
-                            children: [
-                              Text(dataProvider.responseData.data![i].email!)
-                            ],
+                          Image.network(dataProvider.responseData.data![i].avatar!,height:100,width: 100,fit: BoxFit.cover,),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                               crossAxisAlignment: CrossAxisAlignment.start,
+                               mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(dataProvider.responseData.data![i].firstName!),
+                                const SizedBox(height: 10,),
+                                Text(dataProvider.responseData.data![i].email!),
+                              ],
+                            ),
                           ),
                         ],
-                      ),
-                    ));
+                      )),
+                );
               }),
     );
   }
