@@ -53,7 +53,10 @@ class _HomePageState extends State<HomePage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Image.network(dataProvider.responseData.data![i].avatar!,height:100,width: 100,fit: BoxFit.cover,),
+                          Image.network(dataProvider.responseData.data![i].avatar!,
+                          height:100,
+                          width: 100,
+                          fit: BoxFit.cover,),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Column(

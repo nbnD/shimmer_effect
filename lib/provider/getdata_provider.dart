@@ -1,7 +1,6 @@
 import 'dart:developer';
 import 'dart:async';
 import 'dart:convert';
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:shimmer_example/response/response_data.dart';
